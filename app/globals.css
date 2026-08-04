@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Cazador Belga */
+  --cb-green: #2e4d1f;
+  --cb-green-dark: #1f3515;
+  --cb-green-light: #edf6e8;
+
+  --cb-gray: #6b7280;
 }
 
 @theme inline {
