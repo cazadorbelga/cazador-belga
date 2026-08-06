@@ -17,24 +17,22 @@ export default function GuideHeader({
 }: GuideHeaderProps) {
   return (
     <header className="mb-16">
-      <p className="text-sm font-semibold uppercase tracking-widest text-green-700">
+      <span className="inline-flex rounded-full bg-green-100 px-4 py-1 text-sm font-semibold text-green-800">
         {category}
-      </p>
+      </span>
 
-      <h1 className="mt-5 max-w-4xl text-6xl font-extrabold leading-tight tracking-tight">
+      <h1 className="mt-6 max-w-4xl text-5xl font-bold tracking-tight lg:text-6xl">
         {title}
       </h1>
 
-      <p className="mt-10 max-w-2xl text-xl leading-9 text-gray-600">
+      <p className="mt-6 max-w-3xl text-xl leading-9 text-gray-600">
         {description}
       </p>
 
-      <div className="mt-10 flex flex-wrap gap-6 text-sm text-gray-500">
-        <span>✍️ {author}</span>
-
-        <span>🕒 {readingTime}</span>
-
-        <span>📅 {date}</span>
+      <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-500">
+        <span>👤 {author}</span>
+        <span>📅 Mis à jour : {date}</span>
+        <span>⏱️ {readingTime} de lecture</span>
       </div>
     </header>
   );

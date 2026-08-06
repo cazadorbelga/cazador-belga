@@ -1,16 +1,21 @@
 import Hero from "./components/Hero";
-
-import WhyUs from "./components/WhyUs";
 import FeaturedGuides from "./components/FeaturedGuides";
-import Breadcrumb from "@/app/components/Breadcrumb";
+import WhyUs from "./components/WhyUs";
+import AboutSimon from "./components/AboutSimon";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Hero />
-      <Breadcrumb currentPage="Accueil" />
+
+      <FeaturedGuides
+        title="Nos guides incontournables"
+        description="Commencez par les guides les plus consultés par les chasseurs souhaitant découvrir la chasse en Espagne."
+      />
+
       <WhyUs />
-      <FeaturedGuides />
+
+      <AboutSimon />
     </main>
   );
 }

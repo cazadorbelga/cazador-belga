@@ -7,7 +7,13 @@ import TableOfContents from "@/app/components/TableOfContents";
 export default function GuidePermis() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-20">
-      <Breadcrumb currentPage="Trouver un territoire de chasse" />
+      <Breadcrumb
+        items={[
+          { label: "Accueil", href: "/" },
+          { label: "Guides", href: "/guides" },
+          { label: "Trouver un territoire de chasse" },
+        ]}
+      />
       <GuideHeader
         category="Guide"
         title="Comment trouver un territoire de chasse en Espagne"

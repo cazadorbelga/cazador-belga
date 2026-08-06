@@ -31,7 +31,7 @@ export default function Hero() {
           Vous êtes au bon endroit.
         </p>
 
-        <Button href="#guides">Découvrir les guides</Button>
+        <Button href="/guides">Découvrir les guides</Button>
       </div>
     </section>
   );

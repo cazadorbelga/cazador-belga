@@ -9,6 +9,14 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const navigation = [
+    { name: "Accueil", href: "/" },
+    { name: "Guides", href: "/guides" },
+    { name: "Articles", href: "/articles" },
+    { name: "À propos", href: "/a-propos" },
+    { name: "Contact", href: "/contact" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
@@ -25,13 +33,13 @@ export default function Header() {
         scrolled || !isHomePage ? "bg-white shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
         <Link href="/">
           <Image
             src="/images/logo/logovftrans.png"
             alt="Cazador Belga"
-            width={120}
-            height={120}
+            width={90}
+            height={90}
             priority
           />
         </Link>
@@ -41,11 +49,22 @@ export default function Header() {
             scrolled || !isHomePage ? "text-gray-900" : "text-white"
           }`}
         >
-          <Link href="/">Accueil</Link>
-          <Link href="/guides">Guides</Link>
-          <Link href="/articles">Articles</Link>
-          <Link href="/a-propos">À propos</Link>
-          <Link href="/contact">Contact</Link>
+          {navigation.map((item) => {
+            const isActive =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={isActive ? "font-semibold text-green-600" : ""}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </nav>
 
         <div

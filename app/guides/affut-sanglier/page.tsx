@@ -7,7 +7,13 @@ import TableOfContents from "@/app/components/TableOfContents";
 export default function GuidePermis() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-20">
-      <Breadcrumb currentPage="Affût au sanglier" />
+      <Breadcrumb
+        items={[
+          { label: "Accueil", href: "/" },
+          { label: "Guides", href: "/guides" },
+          { label: "Affût au sanglier" },
+        ]}
+      />
       <GuideHeader
         category="Guide"
         title="Réussir un affût au sanglier en Espagne"

@@ -1,25 +1,37 @@
 import Link from "next/link";
 
-type BreadcrumbProps = {
-  currentPage: string;
+type BreadcrumbItem = {
+  label: string;
+  href?: string;
 };
 
-export default function Breadcrumb({ currentPage }: BreadcrumbProps) {
+type BreadcrumbProps = {
+  items: BreadcrumbItem[];
+};
+
+export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav className="mb-8 text-sm text-gray-500">
-      <Link href="/" className="hover:text-green-700">
-        Accueil
-      </Link>
+    <nav
+      aria-label="Fil d'Ariane"
+      className="mb-8 flex items-center gap-2 text-sm text-gray-500"
+    >
+      {items.map((item, index) => {
+        const isLast = index === items.length - 1;
 
-      <span className="mx-2">›</span>
+        return (
+          <div key={item.label} className="flex items-center gap-2">
+            {item.href && !isLast ? (
+              <Link href={item.href} className="hover:text-green-700">
+                {item.label}
+              </Link>
+            ) : (
+              <span className="font-medium text-gray-900">{item.label}</span>
+            )}
 
-      <Link href="/#guides" className="hover:text-green-700">
-        Guides
-      </Link>
-
-      <span className="mx-2">›</span>
-
-      <span className="font-medium text-gray-900">{currentPage}</span>
+            {!isLast && <span className="text-gray-400">›</span>}
+          </div>
+        );
+      })}
     </nav>
   );
 }

@@ -3,13 +3,15 @@ export const guides = [
     slug: "permis-chasse-espagne",
     link: "/guides/permis-chasse-espagne",
     title: "Comment obtenir son permis de chasse en Espagne",
-    description:
-      "Toutes les étapes expliquées simplement pour obtenir votre permis de chasse espagnol lorsque vous êtes francophone.",
-    introduction:
-      "Obtenir son permis de chasse en Espagne est souvent perçu comme compliqué lorsqu'on est francophone. Pourtant, avec les bonnes informations et un peu de préparation, les démarches sont relativement simples.",
+    description: "...",
+    introduction: "...",
     image: "/images/articles/permis.jpg",
     readingTime: "5 min",
-    category: "Guide",
+
+    category: "Administratif",
+    featured: true,
+    publishedAt: "2026-08-06",
+    author: "Simon Leroy",
   },
 
   {
@@ -22,7 +24,10 @@ export const guides = [
       "Trouver un territoire de chasse en Espagne est souvent la première difficulté rencontrée par les chasseurs francophones. Entre les cotos de caza, les réserves et les différents modes de gestion, il est parfois difficile de savoir où commencer.",
     image: "/images/articles/territoire.jpg",
     readingTime: "7 min",
-    category: "Guide",
+    category: "Territoires",
+    featured: false,
+    publishedAt: "2026-08-06",
+    author: "Simon Leroy",
   },
 
   {
@@ -35,6 +40,9 @@ export const guides = [
       "L'affût au sanglier est l'une des méthodes de chasse les plus passionnantes en Espagne. Bien choisir son poste, comprendre les habitudes des animaux et tenir compte du vent sont des éléments essentiels pour réussir.",
     image: "/images/articles/affut-sanglier.jpg",
     readingTime: "9 min",
-    category: "Guide",
+    category: "Sanglier",
+    featured: false,
+    publishedAt: "2026-08-06",
+    author: "Simon Leroy",
   },
 ];
