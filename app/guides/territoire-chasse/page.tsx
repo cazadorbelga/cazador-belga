@@ -21,6 +21,7 @@ export default function GuidePermis() {
         author="Simon Leroy"
         readingTime="7 min"
         date="Août 2026"
+        tags={["Espagne", "Gestion des territoires", "Administratif"]}
       />
       <GuideHeroImage
         src="/images/articles/territoire.jpg"

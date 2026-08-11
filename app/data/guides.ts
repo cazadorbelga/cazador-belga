@@ -9,6 +9,12 @@ export const guides = [
     readingTime: "5 min",
 
     category: "Administratif",
+    tags: [
+      "Administratif",
+      "Permis de chasse",
+      "Licencia de caza",
+      "Communauté valencienne",
+    ],
     featured: true,
     publishedAt: "2026-08-06",
     author: "Simon Leroy",
@@ -25,6 +31,7 @@ export const guides = [
     image: "/images/articles/territoire.jpg",
     readingTime: "7 min",
     category: "Territoires",
+    tags: ["Lieux", "Territoires", "Espagne", "Communauté valencienne"],
     featured: false,
     publishedAt: "2026-08-06",
     author: "Simon Leroy",
@@ -41,6 +48,7 @@ export const guides = [
     image: "/images/articles/affut-sanglier.jpg",
     readingTime: "9 min",
     category: "Sanglier",
+    tags: ["Animaux", "Sanglier", "Modalités de chasse", "Espera", "Espagne"],
     featured: false,
     publishedAt: "2026-08-06",
     author: "Simon Leroy",

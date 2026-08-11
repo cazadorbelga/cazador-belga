@@ -21,6 +21,7 @@ export default function GuidePermis() {
         author="Simon Leroy"
         readingTime="9 min"
         date="Août 2026"
+        tags={["Sanglier", "Espagne", "Chasse à l'affût"]}
       />
       <GuideHeroImage
         src="/images/articles/affut-sanglier.jpg"

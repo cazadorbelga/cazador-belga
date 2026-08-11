@@ -1,3 +1,5 @@
+import TagList from "./TagList";
+
 type GuideHeaderProps = {
   category: string;
   title: string;
@@ -5,6 +7,7 @@ type GuideHeaderProps = {
   author: string;
   readingTime: string;
   date: string;
+  tags: string[];
 };
 
 export default function GuideHeader({
@@ -14,14 +17,11 @@ export default function GuideHeader({
   author,
   readingTime,
   date,
+  tags,
 }: GuideHeaderProps) {
   return (
     <header className="mb-16">
-      <p className="text-sm font-semibold uppercase tracking-widest text-green-700">
-        {category}
-      </p>
-
-      <h1 className="mt-6 max-w-4xl text-5xl font-bold tracking-tight lg:text-6xl">
+      <h1 className="max-w-4xl text-5xl font-bold tracking-tight lg:text-6xl">
         {title}
       </h1>
 
@@ -34,6 +34,8 @@ export default function GuideHeader({
         <span>📅 Dernière mise à jour : {date}</span>
         <span>⏱️ {readingTime} de lecture</span>
       </div>
+
+      <TagList tags={tags} />
     </header>
   );
 }

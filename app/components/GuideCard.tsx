@@ -6,6 +6,7 @@ type Guide = {
   image: string;
   link: string;
   readingTime: string;
+  tags: string[];
 };
 
 type GuideCardProps = {

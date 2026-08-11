@@ -33,10 +33,16 @@ export default function GuidePermis() {
       <GuideHeader
         category="Guide"
         title="Comment obtenir son permis de chasse en Espagne"
-        description="Toutes les étapes expliquées simplement pour obtenir votre permis de chasse espagnol lorsque vous êtes francophone."
+        description="Toutes les étapes expliquées simplement pour obtenir votre permis de chasse espagnol, que vous soyez francophone ou non."
         author="Simon Leroy"
-        readingTime="5 min"
+        readingTime="7 min"
         date="Août 2026"
+        tags={[
+          "Administratif",
+          "Permis de chasse",
+          "Licencia de caza",
+          "Communauté valencienne",
+        ]}
       />
 
       {/* ========================================
@@ -122,6 +128,29 @@ export default function GuidePermis() {
               Belgique pour pratiquer ma passion, ou apprendre à chasser en
               Espagne.
             </p>
+
+            <p className="mt-6 leading-8 text-gray-700">
+              J'ai choisi la deuxième option. Et comme j'aime apprendre, je me
+              suis lancé dans les démarches pour comprendre comment fonctionne
+              la chasse espagnole et obtenir mon permis dans la Communauté
+              valencienne.
+            </p>
+
+            <p className="mt-6 leading-8 text-gray-700">
+              Je n'avais pas de guide tout fait pour m'accompagner. J'ai trouvé
+              les informations petit à petit, en cherchant sur Internet, en
+              envoyant des mails et en passant des appels. Je me suis parfois
+              trompé, j'ai dû recommencer certaines démarches et surtout
+              apprendre à comprendre un système différent de celui que je
+              connaissais en Belgique.
+            </p>
+
+            <p className="mt-6 leading-8 text-gray-700">
+              Pour le permis de chasse, c'est finalement auprès de la Federación
+              de Caza de la Comunidad Valenciana que j'ai obtenu les
+              informations dont j'avais besoin. J'ai passé mon examen au
+              printemps 2023.
+            </p>
             {/* Transition visuelle Belgique → Espagne */}
             <div className="mt-10">
               <p className="mb-5 text-center text-lg font-medium italic text-gray-700">
@@ -150,28 +179,6 @@ export default function GuidePermis() {
                 </div>
               </div>
             </div>
-            <p className="mt-6 leading-8 text-gray-700">
-              J'ai choisi la deuxième option. Et comme j'aime apprendre, je me
-              suis lancé dans les démarches pour comprendre comment fonctionne
-              la chasse espagnole et obtenir mon permis dans la Communauté
-              valencienne.
-            </p>
-
-            <p className="mt-6 leading-8 text-gray-700">
-              Je n'avais pas de guide tout fait pour m'accompagner. J'ai trouvé
-              les informations petit à petit, en cherchant sur Internet, en
-              envoyant des mails et en passant des appels. Je me suis parfois
-              trompé, j'ai dû recommencer certaines démarches et surtout
-              apprendre à comprendre un système différent de celui que je
-              connaissais en Belgique.
-            </p>
-
-            <p className="mt-6 leading-8 text-gray-700">
-              Pour le permis de chasse, c'est finalement auprès de la Federación
-              de Caza de la Comunidad Valenciana que j'ai obtenu les
-              informations dont j'avais besoin. J'ai passé mon examen au
-              printemps 2023.
-            </p>
           </GuideSection>
 
           {/* ========================================
@@ -205,39 +212,134 @@ export default function GuidePermis() {
               spécifique au monde de la chasse, de la réglementation et de la
               faune.
             </p>
+            {/* Vue d'ensemble du parcours */}
+            <div className="my-10">
+              <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+                <Image
+                  src="/images/guides/parcours-chasse-espagne.png"
+                  alt="Schéma des principales démarches pour pouvoir chasser en Espagne"
+                  width={1200}
+                  height={900}
+                  className="mx-auto w-full max-w-5xl"
+                />
+              </div>
+
+              <p className="mt-3 text-center text-sm italic text-gray-500">
+                Vue d'ensemble des principales démarches avant de pouvoir
+                chasser.
+              </p>
+            </div>
           </GuideSection>
           {/* ========================================
     SECTION 3 — LA PRÉPARATION
     ======================================== */}
           <GuideSection id="preparation" title="La préparation">
             <p className="mt-6 leading-8 text-gray-700">
-              Une fois inscrit, j'ai commencé la préparation à l'examen. Dans
-              mon cas, la formation était entièrement en espagnol et demandait
-              surtout de se familiariser avec le vocabulaire spécifique à la
-              chasse.
+              Dans mon cas, la formation était entièrement en espagnol et
+              demandait surtout de se familiariser avec le vocabulaire
+              spécifique à la chasse.
             </p>
 
             {/* Étape 1 */}
-            <div className="mt-8">
-              <h3 className="text-lg font-medium italic leading-6 text-gray-900">
+            {/* 1. Inscription à la formation */}
+            <div>
+              <h3 className="text-lg font-semibold italic text-gray-900">
                 1. Suivre la formation
               </h3>
 
-              <div className="mt-1 space-y-2 leading-8 text-gray-700">
+              <div className="mt-2 space-y-3 leading-8 text-gray-700">
                 <p>
-                  La formation que j'ai suivie coûtait 60 €. Elle donnait accès
-                  à une plateforme en ligne regroupant les différents thèmes
-                  nécessaires à la préparation de l'examen.
+                  La première étape consiste à suivre la formation officielle
+                  permettant de préparer l'épreuve d'aptitude à la chasse de la
+                  Communauté valencienne. La formation que j'ai suivie coûtait
+                  60 €. Elle donne accès à une plateforme en ligne regroupant
+                  les différents thèmes nécessaires à la préparation de
+                  l'examen.
                 </p>
 
                 <p>
-                  Pour commencer, il faut donc s'inscrire à la formation et
-                  accéder à la plateforme depuis laquelle vous pourrez suivre
-                  l'ensemble du programme.
+                  Pour accéder à la formation, rendez-vous sur le site de la{" "}
+                  <a
+                    href="https://federacioncazacv.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 hover:decoration-gray-900"
+                  >
+                    Federación de Caza de la Comunidad Valenciana
+                  </a>
+                  .
                 </p>
+
+                <p>Depuis le site, suivez les étapes suivantes :</p>
+
+                <ol className="ml-5 list-decimal space-y-1">
+                  <li>
+                    Ouvrez la rubrique <strong>Tienda</strong>.
+                  </li>
+                  <li>
+                    Sélectionnez <strong>Cursos Escola de Caça</strong>.
+                  </li>
+                  <li>
+                    Recherchez <strong>Curso de Licencia de Caza</strong>.
+                  </li>
+                  <li>
+                    Cliquez sur <strong>Añadir al carrito</strong>.
+                  </li>
+                  <li>
+                    Vérifiez votre panier puis cliquez sur{" "}
+                    <strong>Finalizar compra</strong>.
+                  </li>
+                  <li>
+                    Suivez les étapes pour effectuer le paiement et finaliser
+                    votre inscription.
+                  </li>
+                </ol>
+
+                <p>
+                  Une fois l'inscription effectuée, vous pourrez accéder à la
+                  plateforme de formation et commencer à parcourir les
+                  différents thèmes.
+                </p>
+
+                {/* Information sur la gratuité pour les fédérés */}
+                <div className="mt-4 rounded-2xl border border-gray-200 bg-gray-50 p-5">
+                  <p className="font-semibold text-gray-900">
+                    Une formation gratuite pour les fédérés
+                  </p>
+
+                  <p className="mt-2 leading-7 text-gray-700">
+                    La formation est gratuite pour les chasseurs fédérés auprès
+                    de la Federación de Caza de la Comunidad Valenciana. Pour en
+                    bénéficier, il faut contacter la délégation correspondant à
+                    votre province.
+                  </p>
+                </div>
+
+                <p>
+                  Si vous envisagez réellement de chasser dans la Communauté
+                  valencienne, je vous conseille de vous fédérer plutôt que de
+                  payer séparément les 60 € de formation. Dans mon cas, la
+                  cotisation fédérative et l'assurance représentaient un montant
+                  annuel de <strong>76,50 €</strong>.
+                </p>
+
+                {/* Capture du tarif fédératif */}
+                <div className="mt-4">
+                  <Image
+                    src="/images/guides/cotizacion-federacion.jpg"
+                    alt="Exemple de cotisation fédérative et d'assurance"
+                    width={300}
+                    height={195}
+                    className="mx-auto rounded-xl shadow-md"
+                  />
+
+                  <p className="mt-2 text-center text-sm italic text-gray-500">
+                    Exemple de cotisation fédérative et d'assurance : 76,50 €
+                    par an.
+                  </p>
+                </div>
               </div>
             </div>
-
             {/* Étape 2 */}
             <div className="mt-8">
               <h3 className="text-lg font-medium italic leading-6 text-gray-900">
@@ -313,31 +415,33 @@ export default function GuidePermis() {
 
           {/* Illustration de la préparation */}
           <div className="my-12">
-            <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+            <div className="mx-auto max-w-2xl overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+              {/* Capture d'exemple de questions */}
               <Image
                 src="/images/guides/genredequestion.png"
-                alt="Exemple de question de préparation à l'examen"
-                width={1600}
-                height={900}
-                className="h-auto w-full object-cover"
+                alt="Exemples de questions rencontrées pendant la préparation"
+                width={1200}
+                height={750}
+                className="h-auto w-full"
               />
             </div>
 
             <p className="mt-3 text-center text-sm italic text-gray-500">
-              Exemple de question rencontrée pendant la préparation.
+              Exemples de questions rencontrées pendant la préparation.
             </p>
           </div>
-
           {/* ========================================
     SECTION 4 — L'EXAMEN
     ======================================== */}
           <GuideSection id="examen" title="L'examen">
             <p className="mt-6 leading-8 text-gray-700">
               Dans mon cas, j'ai passé l'examen dans la Communauté valencienne
-              après avoir suivi la formation. J'avais pris rendez-vous par email
-              et les 60 € que j'avais payés pour accéder au module de formation
+              après avoir suivi la formation. J'avais pris rendez-vous par
+              email. Les 60 € que j'avais payés pour accéder à la formation
               comprenaient, si je me souviens bien, également le passage de
-              l'examen.
+              l'examen. À noter : si vous êtes déjà fédéré auprès de la
+              Federación de Caza de la Comunidad Valenciana, la formation peut
+              être gratuite.
             </p>
 
             <p className="mt-4 leading-8 text-gray-700">
@@ -376,15 +480,16 @@ export default function GuidePermis() {
             {/* Les trois démarches principales */}
             <div className="mt-8">
               <h3 className="text-lg font-medium italic leading-6 text-gray-900">
-                Les trois démarches principales
+                Les 4 démarches principales :
               </h3>
 
               <div className="mt-2 space-y-4 leading-8 text-gray-700">
                 <p>
-                  <strong>1. La licencia de caza</strong> — c'est la licence
+                  <strong>1. La licencia de caza </strong> — c'est la licence
                   nécessaire pour pratiquer la chasse dans la Communauté
-                  valencienne. Elle est à distinguer du permis ou de l'examen de
-                  chasse.
+                  valencienne. Une taxe doit être acquittée pour l'obtenir. Elle
+                  est à distinguer de l'épreuve d'aptitude présentée dans ce
+                  guide.
                 </p>
 
                 <p>
@@ -394,9 +499,15 @@ export default function GuidePermis() {
                 </p>
 
                 <p>
-                  <strong>3. La fédération</strong> — j'ai également eu la
-                  possibilité d'accéder à la carte de la fédération. Cette
-                  démarche est distincte de la licencia de caza.
+                  <strong>3. La fédération</strong> — (non obligatoire) j'ai
+                  également eu la possibilité d'accéder à la carte de la
+                  fédération. Cette démarche est distincte de la licencia de
+                  caza.
+                </p>
+                <p>
+                  <strong>4. La licencia de armas</strong> — si vous souhaitez
+                  chasser avec une arme, cette licence est obligatoire. Un guide
+                  est prévu pour cette démarche.
                 </p>
               </div>
             </div>
@@ -427,10 +538,11 @@ export default function GuidePermis() {
             </li>
 
             <li className="relative pl-6 leading-8 text-gray-700 before:absolute before:left-0 before:top-[0.7rem] before:h-2 before:w-2 before:rounded-full before:bg-green-600">
-              Enfin, gardez en tête que l'obtention de la licencia de caza n'est
-              que la première étape. Avant votre première sortie, pensez aux
-              autres démarches nécessaires, notamment l'assurance, la licence
-              d'armes et la recherche d'un territoire de chasse.
+              Enfin, gardez en tête que l'obtention de l'examen de chasse
+              (épreuve d'aptitude) n'est que la première étape. Avant votre
+              première sortie, pensez aux autres démarches nécessaires,
+              notamment l'assurance, la licence d'armes, l'obtention de la
+              licencia de caza et la recherche d'un territoire de chasse.
             </li>
           </GuideAdvice>
           {/* ========================================
@@ -460,7 +572,7 @@ export default function GuidePermis() {
             sources={[
               {
                 title: "Federación de Caza de la Comunidad Valenciana",
-                url: "https://www.fccv.es/",
+                url: "https://federacioncazacv.com/",
               },
             ]}
           />
