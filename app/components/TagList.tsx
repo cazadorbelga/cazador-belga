@@ -21,7 +21,7 @@ export default function TagList({ tags = [] }: TagListProps) {
       {visibleTags.map((tag) => (
         <Link
           key={tag}
-          href={`/guides?tag=${encodeURIComponent(tag)}`}
+          href={`/tags?tag=${encodeURIComponent(tag)}`}
           className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 transition hover:border-green-200 hover:bg-green-50 hover:text-green-700"
         >
           {tag}

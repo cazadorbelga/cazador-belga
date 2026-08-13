@@ -3,8 +3,13 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 import GuideHeader from "@/app/components/GuideHeader";
 import GuideHeroImage from "@/app/components/GuideHeroImage";
 import TableOfContents from "@/app/components/TableOfContents";
-
+import { guides } from "@/app/data/guides";
 export default function GuidePermis() {
+  const guide = guides.find((guide) => guide.slug === "affut-sanglier");
+
+  if (!guide) {
+    return null;
+  }
   return (
     <main className="mx-auto max-w-5xl px-6 py-20">
       <Breadcrumb
@@ -21,7 +26,7 @@ export default function GuidePermis() {
         author="Simon Leroy"
         readingTime="9 min"
         date="Août 2026"
-        tags={["Sanglier", "Espagne", "Chasse à l'affût"]}
+        tags={guide.tags}
       />
       <GuideHeroImage
         src="/images/articles/affut-sanglier.jpg"

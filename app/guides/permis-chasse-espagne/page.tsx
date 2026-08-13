@@ -8,8 +8,14 @@ import GuideRelated from "@/app/components/GuideRelated";
 import GuideSection from "@/app/components/GuideSection";
 import GuideAdvice from "@/app/components/GuideAdvice";
 import Image from "next/image";
+import { guides } from "@/app/data/guides";
 
 export default function GuidePermis() {
+  const guide = guides.find((guide) => guide.slug === "permis-chasse-espagne");
+
+  if (!guide) {
+    return null;
+  }
   return (
     <main className="mx-auto max-w-5xl px-6 pt-36 pb-20">
       {/* ========================================
@@ -37,12 +43,7 @@ export default function GuidePermis() {
         author="Simon Leroy"
         readingTime="7 min"
         date="Août 2026"
-        tags={[
-          "Administratif",
-          "Permis de chasse",
-          "Licencia de caza",
-          "Communauté valencienne",
-        ]}
+        tags={guide.tags}
       />
 
       {/* ========================================

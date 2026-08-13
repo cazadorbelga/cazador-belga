@@ -50,6 +50,7 @@ export const tagFamilies = {
     "Montería",
     "Battue",
     "Chasse à l'approche",
+    "Chasse à l'affût",
     "Chasse à la botte",
   ],
 

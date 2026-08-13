@@ -8,6 +8,7 @@ type GuideHeaderProps = {
   readingTime: string;
   date: string;
   tags: string[];
+  className?: string;
 };
 
 export default function GuideHeader({
@@ -18,9 +19,10 @@ export default function GuideHeader({
   readingTime,
   date,
   tags,
+  className = "",
 }: GuideHeaderProps) {
   return (
-    <header className="mb-16">
+    <header className={`mb-16 ${className}`}>
       <h1 className="max-w-4xl text-5xl font-bold tracking-tight lg:text-6xl">
         {title}
       </h1>

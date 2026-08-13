@@ -7,7 +7,7 @@ export const articles = [
       "Retour sur ma première montería, le 8 novembre 2025 à Adobes, dans la province de Guadalajara.",
     introduction:
       "Le 8 novembre 2025, j'ai participé à ma toute première montería en Espagne. Une expérience qui m'a permis de découvrir une autre manière de vivre la chasse au grand gibier.",
-    image: "/images/articles/premiere-monteria.jpg",
+    image: "/images/monteria1.jpeg",
     readingTime: "8 min",
     tags: ["Retour d'expérience", "Montería", "Espagne", "Cerf", "Chevreuil"],
     featured: true,
