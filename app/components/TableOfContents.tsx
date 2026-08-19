@@ -41,7 +41,7 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
   }, [items]);
 
   return (
-    <aside className="mb-12 lg:sticky lg:top-32 lg:w-56 lg:self-start">
+    <aside className="mb-12 hidden lg:sticky lg:top-32 lg:block lg:w-56 lg:self-start">
       <nav aria-label="Sommaire du guide">
         <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-green-700">
           Sommaire
