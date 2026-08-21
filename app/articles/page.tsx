@@ -42,6 +42,7 @@ export default async function ArticlesPage({
               <p className="text-sm text-gray-500">
                 Articles correspondant au tag :
               </p>
+
               <h2 className="mt-1 text-2xl font-semibold text-gray-900">
                 {tag}
               </h2>
@@ -57,6 +58,7 @@ export default async function ArticlesPage({
                   className="group h-full"
                 >
                   <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    {/* Image */}
                     <div className="relative h-64 overflow-hidden">
                       <Image
                         src={article.image}
@@ -67,30 +69,42 @@ export default async function ArticlesPage({
                       />
                     </div>
 
+                    {/* Contenu */}
                     <div className="flex flex-1 flex-col p-8">
-                      <div className="flex flex-wrap gap-2">
-                        {article.tags.slice(0, 3).map((tag) => (
+                      {/* Tags */}
+                      <div className="flex h-8 items-center gap-2 overflow-hidden">
+                        {article.tags.slice(0, 2).map((tag) => (
                           <span
                             key={tag}
-                            className="rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600"
+                            className="shrink-0 whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600"
                           >
                             {tag}
                           </span>
                         ))}
+
+                        {article.tags.length > 2 && (
+                          <span className="shrink-0 whitespace-nowrap rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-500">
+                            +{article.tags.length - 2}
+                          </span>
+                        )}
                       </div>
 
+                      {/* Temps de lecture */}
                       <span className="mt-5 text-sm text-gray-500">
                         {article.readingTime} de lecture
                       </span>
 
+                      {/* Titre */}
                       <h2 className="mt-3 text-2xl font-semibold leading-tight text-gray-900">
                         {article.title}
                       </h2>
 
+                      {/* Description */}
                       <p className="mt-4 line-clamp-3 text-base leading-7 text-gray-600">
                         {article.description}
                       </p>
 
+                      {/* CTA */}
                       <span className="mt-auto pt-8 font-semibold text-green-700">
                         Lire l'article →
                       </span>

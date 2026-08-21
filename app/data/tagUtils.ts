@@ -1,38 +1,39 @@
 import { articles } from "./articles";
 import { guides } from "./guides";
-import { tagFamilies } from "./tags";
+import { tagFamilies, tagTranslations, type TagId } from "./tags";
 
 export type ActiveTag = {
+  id: TagId;
   name: string;
   count: number;
   family: string;
 };
 
-export function getAllTags(): ActiveTag[] {
-  const counts = new Map<string, number>();
+export function getAllTags(locale: "fr" | "es" | "en" = "fr"): ActiveTag[] {
+  const counts = new Map<TagId, number>();
 
   for (const guide of guides) {
-    for (const tag of guide.tags) {
+    for (const tag of guide.tags as TagId[]) {
       counts.set(tag, (counts.get(tag) ?? 0) + 1);
     }
   }
 
   for (const article of articles) {
-    for (const tag of article.tags) {
+    for (const tag of article.tags as TagId[]) {
       counts.set(tag, (counts.get(tag) ?? 0) + 1);
     }
   }
 
   const result: ActiveTag[] = [];
 
-  for (const [name, count] of counts) {
+  for (const [id, count] of counts) {
     const family =
-      Object.entries(tagFamilies).find(([, tags]) =>
-        tags.includes(name),
-      )?.[0] ?? "autres";
+      Object.entries(tagFamilies).find(([, tags]) => tags.includes(id))?.[0] ??
+      "autres";
 
     result.push({
-      name,
+      id,
+      name: tagTranslations[id][locale],
       count,
       family,
     });

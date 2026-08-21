@@ -5,6 +5,7 @@ import GuideCard from "../components/GuideCard";
 import { guides } from "../data/guides";
 import { articles } from "../data/articles";
 import { getAllTags } from "../data/tagUtils";
+import { tagTranslations, type TagId } from "../data/tags";
 
 type TagsPageProps = {
   searchParams: Promise<{
@@ -29,14 +30,18 @@ const familyLabels: Record<string, string> = {
 export default async function TagsPage({ searchParams }: TagsPageProps) {
   const { tag } = await searchParams;
 
-  const activeTags = getAllTags();
+  const activeTags = getAllTags("fr");
+
+  const activeTag = tag
+    ? activeTags.find((item) => item.id === tag)
+    : undefined;
 
   const filteredGuides = tag
-    ? guides.filter((guide) => guide.tags.includes(tag))
+    ? guides.filter((guide) => guide.tags.includes(tag as TagId))
     : [];
 
   const filteredArticles = tag
-    ? articles.filter((article) => article.tags.includes(tag))
+    ? articles.filter((article) => article.tags.includes(tag as TagId))
     : [];
 
   const hasResults = filteredGuides.length > 0 || filteredArticles.length > 0;
@@ -65,7 +70,7 @@ export default async function TagsPage({ searchParams }: TagsPageProps) {
         {tag ? (
           <>
             <h1 className="mt-8 text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
-              Contenus sur « {tag} »
+              Contenus sur « {activeTag?.name ?? tag} "
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-600">
@@ -74,7 +79,7 @@ export default async function TagsPage({ searchParams }: TagsPageProps) {
 
             <div className="mt-8 inline-flex items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 shadow-sm">
               <span className="rounded-full bg-green-700 px-4 py-1.5 text-sm font-semibold text-white shadow-sm">
-                {tag}
+                {activeTag?.name ?? tag}
               </span>
 
               <Link
@@ -118,10 +123,8 @@ export default async function TagsPage({ searchParams }: TagsPageProps) {
                       .sort((a, b) => a.name.localeCompare(b.name, "fr"))
                       .map((activeTag) => (
                         <Link
-                          key={activeTag.name}
-                          href={`/tags?tag=${encodeURIComponent(
-                            activeTag.name,
-                          )}`}
+                          key={activeTag.id}
+                          href={`/tags?tag=${encodeURIComponent(activeTag.id)}`}
                           className="group inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50 px-3.5 py-2 text-sm font-medium text-gray-700 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-green-200 hover:bg-green-50 hover:text-green-800 hover:shadow-md"
                         >
                           <span>{activeTag.name}</span>
@@ -204,7 +207,7 @@ export default async function TagsPage({ searchParams }: TagsPageProps) {
                                     key={articleTag}
                                     className="rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600"
                                   >
-                                    {articleTag}
+                                    {tagTranslations[articleTag as TagId].fr}
                                   </span>
                                 ))}
                               </div>

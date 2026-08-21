@@ -10,15 +10,35 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
+  const isHomePage =
+    pathname === "/" || pathname === "/es" || pathname === "/en";
 
-  const navigation = [
-    { name: "Accueil", href: "/" },
-    { name: "Guides", href: "/guides" },
-    { name: "Articles", href: "/articles" },
-    { name: "À propos", href: "/a-propos" },
-    { name: "Contact", href: "/contact" },
-  ];
+  const isSpanish = pathname.startsWith("/es");
+  const isEnglish = pathname.startsWith("/en");
+
+  const navigation = isSpanish
+    ? [
+        { name: "Inicio", href: "/es" },
+        { name: "Guías", href: "/es/guias" },
+        { name: "Artículos", href: "/es/articulos" },
+        { name: "Sobre mí", href: "/es/sobre-mi" },
+        { name: "Contacto", href: "/es/contacto" },
+      ]
+    : isEnglish
+      ? [
+          { name: "Home", href: "/en" },
+          { name: "Guides", href: "/en/guides" },
+          { name: "Articles", href: "/en/articles" },
+          { name: "About", href: "/en/about" },
+          { name: "Contact", href: "/en/contact" },
+        ]
+      : [
+          { name: "Accueil", href: "/" },
+          { name: "Guides", href: "/guides" },
+          { name: "Articles", href: "/articles" },
+          { name: "À propos", href: "/a-propos" },
+          { name: "Contact", href: "/contact" },
+        ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,8 +82,8 @@ export default function Header() {
         >
           {navigation.map((item) => {
             const isActive =
-              item.href === "/"
-                ? pathname === "/"
+              item.href === "/" || item.href === "/es" || item.href === "/en"
+                ? pathname === item.href
                 : pathname.startsWith(item.href);
 
             return (
@@ -79,13 +99,52 @@ export default function Header() {
         </nav>
 
         {/* Langues + bouton mobile */}
-        <div className="flex items-center gap-4">
-          <div
-            className={`text-sm ${
-              headerIsWhite ? "text-gray-900" : "text-white"
-            }`}
-          >
-            🇫🇷 🇪🇸 🇬🇧
+        <div className="flex items-center gap-5">
+          {/* Sélecteur de langue */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/"
+              aria-label="Français"
+              title="Français"
+              className={`transition-all hover:scale-110 ${
+                pathname === "/"
+                  ? "opacity-100"
+                  : "opacity-50 hover:opacity-100"
+              }`}
+            >
+              <Image
+                src="/flags/fr.svg"
+                alt="Français"
+                width={24}
+                height={16}
+              />
+            </Link>
+
+            <Link
+              href="/es"
+              aria-label="Español"
+              title="Español"
+              className={`transition-all hover:scale-110 ${
+                pathname.startsWith("/es")
+                  ? "opacity-100"
+                  : "opacity-50 hover:opacity-100"
+              }`}
+            >
+              <Image src="/flags/es.svg" alt="Español" width={24} height={16} />
+            </Link>
+
+            <Link
+              href="/en"
+              aria-label="English"
+              title="English"
+              className={`transition-all hover:scale-110 ${
+                pathname.startsWith("/en")
+                  ? "opacity-100"
+                  : "opacity-50 hover:opacity-100"
+              }`}
+            >
+              <Image src="/flags/en.svg" alt="English" width={24} height={16} />
+            </Link>
           </div>
 
           {/* Bouton menu mobile */}
@@ -133,6 +192,36 @@ export default function Header() {
                   </Link>
                 );
               })}
+            </div>
+
+            {/* Langues mobile */}
+            <div className="flex items-center gap-4 px-2 py-5">
+              <Link href="/" aria-label="Français">
+                <Image
+                  src="/flags/fr.svg"
+                  alt="Français"
+                  width={28}
+                  height={18}
+                />
+              </Link>
+
+              <Link href="/es" aria-label="Español">
+                <Image
+                  src="/flags/es.svg"
+                  alt="Español"
+                  width={28}
+                  height={18}
+                />
+              </Link>
+
+              <Link href="/en" aria-label="English">
+                <Image
+                  src="/flags/en.svg"
+                  alt="English"
+                  width={28}
+                  height={18}
+                />
+              </Link>
             </div>
           </nav>
         </div>

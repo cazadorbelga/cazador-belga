@@ -176,7 +176,9 @@ export default function AboutPage() {
               <p>
                 Vous trouverez ici des guides pratiques, des articles, des
                 retours d'expérience et progressivement davantage de contenu
-                consacré à la chasse en Espagne.
+                consacré à la chasse en Espagne, au matériel utilisé sur le
+                terrain et aux différentes expériences que je peux partager avec
+                la communauté.
               </p>
 
               <p>

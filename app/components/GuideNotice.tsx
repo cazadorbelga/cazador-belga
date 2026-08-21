@@ -1,10 +1,12 @@
-// Type des propriétés du composant
 type GuideNoticeProps = {
   children: React.ReactNode;
+  title?: string;
 };
 
-// Bloc "À propos de ce guide"
-export default function GuideNotice({ children }: GuideNoticeProps) {
+export default function GuideNotice({
+  children,
+  title = "À propos de ce guide",
+}: GuideNoticeProps) {
   return (
     <section className="my-10 rounded-2xl border border-green-200 bg-green-50/50 p-6">
       <div className="flex items-start gap-3">
@@ -15,9 +17,7 @@ export default function GuideNotice({ children }: GuideNoticeProps) {
 
         {/* Titre et contenu */}
         <div>
-          <h2 className="text-lg font-semibold text-green-800">
-            À propos de ce guide
-          </h2>
+          <h2 className="text-lg font-semibold text-green-800">{title}</h2>
 
           <p className="mt-2 leading-7 text-gray-700">{children}</p>
         </div>

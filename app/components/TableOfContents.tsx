@@ -7,9 +7,13 @@ type TableOfContentsProps = {
     id: string;
     title: string;
   }[];
+  title?: string;
 };
 
-export default function TableOfContents({ items }: TableOfContentsProps) {
+export default function TableOfContents({
+  items,
+  title = "Sommaire",
+}: TableOfContentsProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
 
   useEffect(() => {
@@ -42,9 +46,9 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
 
   return (
     <aside className="mb-12 hidden lg:sticky lg:top-32 lg:block lg:w-56 lg:self-start">
-      <nav aria-label="Sommaire du guide">
+      <nav aria-label={title}>
         <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-green-700">
-          Sommaire
+          {title}
         </p>
 
         <div className="relative">
@@ -54,9 +58,11 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
           <ol className="relative space-y-1">
             {items.map((item, index) => {
               const isActive = activeId === item.id;
+
               const activeIndex = items.findIndex(
                 (currentItem) => currentItem.id === activeId,
               );
+
               const isCompleted = index < activeIndex;
 
               return (

@@ -8,6 +8,9 @@ type GuideHeaderProps = {
   readingTime: string;
   date: string;
   tags: string[];
+  locale?: "fr" | "es" | "en";
+  updatedLabel?: string;
+  readingLabel?: string;
   className?: string;
 };
 
@@ -19,6 +22,10 @@ export default function GuideHeader({
   readingTime,
   date,
   tags,
+
+  locale = "fr",
+  updatedLabel = "Dernière mise à jour",
+  readingLabel = "de lecture",
   className = "",
 }: GuideHeaderProps) {
   return (
@@ -33,11 +40,17 @@ export default function GuideHeader({
 
       <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-500">
         <span>👤 {author}</span>
-        <span>📅 Dernière mise à jour : {date}</span>
-        <span>⏱️ {readingTime} de lecture</span>
+
+        <span>
+          📅 {updatedLabel} : {date}
+        </span>
+
+        <span>
+          ⏱️ {readingTime} {readingLabel}
+        </span>
       </div>
 
-      <TagList tags={tags} />
+      <TagList tags={tags} locale={locale} />
     </header>
   );
 }

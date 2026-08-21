@@ -3,12 +3,16 @@ type GuideSourcesProps = {
     title: string;
     url: string;
   }[];
+  title?: string;
 };
 
-export default function GuideSources({ sources }: GuideSourcesProps) {
+export default function GuideSources({
+  sources,
+  title = "Sources officielles",
+}: GuideSourcesProps) {
   return (
     <section className="mt-16 border-t pt-10">
-      <h2 className="text-2xl font-bold">Sources officielles</h2>
+      <h2 className="text-2xl font-bold">{title}</h2>
 
       <ul className="mt-6 space-y-3">
         {sources.map((source) => (
